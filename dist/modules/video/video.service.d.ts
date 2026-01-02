@@ -1,0 +1,11 @@
+import { Repository } from 'typeorm';
+import { Video } from '../../entities/video.entity';
+export declare class VideoService {
+    private videoRepository;
+    constructor(videoRepository: Repository<Video>);
+    findAll(): Promise<Video[]>;
+    findOne(id: number): Promise<Video | null>;
+    create(videoData: Partial<Video>): Promise<Video>;
+    update(id: number, videoData: Partial<Video>): Promise<Video | null>;
+    delete(id: number): Promise<void>;
+}
