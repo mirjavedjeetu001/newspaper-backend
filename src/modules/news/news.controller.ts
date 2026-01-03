@@ -31,6 +31,11 @@ export class NewsController {
     return this.newsService.findByCategory(+categoryId);
   }
 
+  @Get('slug/:slug')
+  findBySlug(@Param('slug') slug: string): Promise<News | null> {
+    return this.newsService.findBySlug(slug);
+  }
+
   @Get(':id')
   findOne(@Param('id') id: string): Promise<News | null> {
     return this.newsService.findOne(+id);

@@ -8,6 +8,7 @@ export declare class NewsController {
     findFeatured(): Promise<News[]>;
     findTrending(): Promise<News[]>;
     findByCategory(categoryId: string): Promise<News[]>;
+    findBySlug(slug: string): Promise<News | null>;
     findOne(id: string): Promise<News | null>;
     create(newsData: Partial<News>): Promise<News>;
     update(id: string, newsData: Partial<News>): Promise<News | null>;

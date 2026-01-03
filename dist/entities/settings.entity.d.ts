@@ -14,4 +14,8 @@ export declare class Settings {
     twitter_url: string;
     youtube_url: string;
     instagram_url: string;
+    theme_color: string;
+    footer_about_en: string;
+    footer_about_bn: string;
+    footer_links: string;
 }

@@ -27,6 +27,10 @@ let Settings = class Settings {
     twitter_url;
     youtube_url;
     instagram_url;
+    theme_color;
+    footer_about_en;
+    footer_about_bn;
+    footer_links;
 };
 exports.Settings = Settings;
 __decorate([
@@ -89,6 +93,22 @@ __decorate([
     (0, typeorm_1.Column)({ nullable: true }),
     __metadata("design:type", String)
 ], Settings.prototype, "instagram_url", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ default: '#c8102e' }),
+    __metadata("design:type", String)
+], Settings.prototype, "theme_color", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ type: 'text', nullable: true }),
+    __metadata("design:type", String)
+], Settings.prototype, "footer_about_en", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ type: 'text', nullable: true }),
+    __metadata("design:type", String)
+], Settings.prototype, "footer_about_bn", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ type: 'text', nullable: true }),
+    __metadata("design:type", String)
+], Settings.prototype, "footer_links", void 0);
 exports.Settings = Settings = __decorate([
     (0, typeorm_1.Entity)('settings')
 ], Settings);

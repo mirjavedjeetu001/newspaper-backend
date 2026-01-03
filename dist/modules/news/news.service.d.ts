@@ -9,6 +9,7 @@ export declare class NewsService {
     findTrending(): Promise<News[]>;
     findByCategory(categoryId: number): Promise<News[]>;
     findOne(id: number): Promise<News | null>;
+    findBySlug(slug: string): Promise<News | null>;
     create(newsData: Partial<News>): Promise<News>;
     update(id: number, newsData: Partial<News>): Promise<News | null>;
     delete(id: number): Promise<void>;

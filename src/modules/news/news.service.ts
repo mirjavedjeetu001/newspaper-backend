@@ -67,6 +67,20 @@ export class NewsService {
     return news;
   }
 
+  async findBySlug(slug: string): Promise<News | null> {
+    const news = await this.newsRepository.findOne({
+      where: { slug, is_active: true },
+      relations: ['category'],
+    });
+    
+    if (news) {
+      news.views += 1;
+      await this.newsRepository.save(news);
+    }
+    
+    return news;
+  }
+
   async create(newsData: Partial<News>): Promise<News> {
     const news = this.newsRepository.create(newsData);
     return this.newsRepository.save(news);

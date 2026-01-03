@@ -16,6 +16,7 @@ let News = class News {
     id;
     title_en;
     title_bn;
+    slug;
     content_en;
     content_bn;
     image;
@@ -24,6 +25,7 @@ let News = class News {
     is_featured;
     is_trending;
     views;
+    author_name;
     category;
     is_active;
     created_at;
@@ -42,6 +44,10 @@ __decorate([
     (0, typeorm_1.Column)({ type: 'varchar', length: 500 }),
     __metadata("design:type", String)
 ], News.prototype, "title_bn", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ type: 'varchar', length: 500, unique: true }),
+    __metadata("design:type", String)
+], News.prototype, "slug", void 0);
 __decorate([
     (0, typeorm_1.Column)({ type: 'text' }),
     __metadata("design:type", String)
@@ -74,6 +80,10 @@ __decorate([
     (0, typeorm_1.Column)({ default: 0 }),
     __metadata("design:type", Number)
 ], News.prototype, "views", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ type: 'varchar', length: 255, nullable: true }),
+    __metadata("design:type", String)
+], News.prototype, "author_name", void 0);
 __decorate([
     (0, typeorm_1.ManyToOne)(() => category_entity_1.Category, category => category.news),
     __metadata("design:type", category_entity_1.Category)

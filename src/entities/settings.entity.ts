@@ -46,4 +46,16 @@ export class Settings {
 
   @Column({ nullable: true })
   instagram_url: string;
+
+  @Column({ default: '#c8102e' })
+  theme_color: string;
+
+  @Column({ type: 'text', nullable: true })
+  footer_about_en: string;
+
+  @Column({ type: 'text', nullable: true })
+  footer_about_bn: string;
+
+  @Column({ type: 'text', nullable: true })
+  footer_links: string;
 }

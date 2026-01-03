@@ -12,6 +12,9 @@ export class News {
   @Column({ type: 'varchar', length: 500 })
   title_bn: string;
 
+  @Column({ type: 'varchar', length: 500, unique: true })
+  slug: string;
+
   @Column({ type: 'text' })
   content_en: string;
 
@@ -35,6 +38,9 @@ export class News {
 
   @Column({ default: 0 })
   views: number;
+
+  @Column({ type: 'varchar', length: 255, nullable: true })
+  author_name: string;
 
   @ManyToOne(() => Category, category => category.news)
   category: Category;

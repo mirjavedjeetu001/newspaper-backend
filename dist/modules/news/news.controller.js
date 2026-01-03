@@ -35,6 +35,9 @@ let NewsController = class NewsController {
     findByCategory(categoryId) {
         return this.newsService.findByCategory(+categoryId);
     }
+    findBySlug(slug) {
+        return this.newsService.findBySlug(slug);
+    }
     findOne(id) {
         return this.newsService.findOne(+id);
     }
@@ -80,6 +83,13 @@ __decorate([
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Promise)
 ], NewsController.prototype, "findByCategory", null);
+__decorate([
+    (0, common_1.Get)('slug/:slug'),
+    __param(0, (0, common_1.Param)('slug')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", Promise)
+], NewsController.prototype, "findBySlug", null);
 __decorate([
     (0, common_1.Get)(':id'),
     __param(0, (0, common_1.Param)('id')),
